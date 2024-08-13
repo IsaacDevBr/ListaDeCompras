@@ -1,6 +1,7 @@
 package livrokotlin.com.br
 
 import android.content.Intent
+import android.graphics.Bitmap
 import android.icu.text.NumberFormat
 import android.os.Build
 import android.os.Bundle
@@ -15,6 +16,7 @@ import java.util.Locale
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+    private var imageBitMap: Bitmap? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,6 +48,7 @@ class MainActivity : AppCompatActivity() {
 
             //remove
             produtosAdapter.remove(item)
+            binding.txtTotal.clearComposingText()
 
             //retorno indicado que o click foi indicado com sucesso
             true
